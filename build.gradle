@@ -1,0 +1,52 @@
+apply from: 'dependency.gradle'
+
+allprojects{
+    repositories {
+        mavenLocal()
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+//        maven { url "https://raw.githubusercontent.com/tlw-ray/swt-maven-repository/master/docs/"}
+        maven { url "http://nexus.pentaho.org/content/groups/omni/"}
+//        maven { url "http://maven.jahia.org/maven2/"} //for com.sun.tools 也可以通过配置CLASSPATH引入tools.jar解决
+    }
+}
+
+subprojects { subproj ->
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'maven'
+
+
+    group = 'com.winning.tlw.skettle'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    version = '8.1.0.6-682'
+
+    [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
+
+    dependencies {
+        testCompile(
+                libraries.'junit',
+        )
+    }
+
+    // 输出所有编译依赖项: gradle allDeps --configuration compile > dependenciesCompile.txt
+    // 输出所有测试编译依赖项: gradle allDeps --configuration testCompile > dependenciesTestCompile.txt
+    task allDeps(type: DependencyReportTask) {}
+
+    //将测试部分导出为jar, 有的测试会依赖其他包的测试
+    task testJar(type: Jar, dependsOn: testClasses) {
+        baseName = "test-${project.archivesBaseName}"
+        from sourceSets.test.output
+    }
+
+    //将测试部分导出为jar, 有的测试会依赖其他包的测试
+    configurations {
+        tests
+    }
+    //将测试部分导出为jar, 有的测试会依赖其他包的测试
+    artifacts {
+        tests testJar
+    }
+}

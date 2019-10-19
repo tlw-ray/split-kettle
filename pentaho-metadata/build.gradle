@@ -1,0 +1,41 @@
+dependencies {
+    compile (
+            project(':pentaho-connections'),
+            project(':kettle-engine'),
+            project(':kettle-core'),
+            project(':pentaho-cwm-master'),
+            project(':reporting-libraries-libformula'),
+            libraries.'joda-time',
+            libraries.'commons-lang3',
+            libraries.'commons-io',
+            libraries.'commons-logging',
+            libraries.'commons-math',
+            libraries.'httpclient',
+            libraries.'httpcore',
+            libraries.'log4j',
+            libraries.'xstream',
+            libraries.'netbeans-jmi',
+            libraries.'netbeans-mdrapi',
+            libraries.'netbeans-mof',
+            libraries.'netbeans-nbmdr',
+    )
+    testCompile (
+            libraries.'mockito-all',
+            libraries.'hsqldb',
+    )
+}
+//        <dependency>
+//        <groupId>pentaho</groupId>
+//      <artifactId>pentaho-cwm</artifactId>
+//<version>${pentaho-cwm.version}</version>
+//    </dependency>
+//        <dependency>
+//        <groupId>org.pentaho.reporting.library</groupId>
+//      <artifactId>libformula</artifactId>
+//<version>${pentaho-reporting.version}</version>
+//    </dependency>
+//        <dependency>
+//        <groupId>org.pentaho.reporting.library</groupId>
+//      <artifactId>libbase</artifactId>
+//<version>${pentaho-reporting.version}</version>
+//    </dependency>

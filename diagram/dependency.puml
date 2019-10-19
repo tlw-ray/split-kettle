@@ -1,0 +1,26 @@
+@startuml
+digraph dependency {
+    commons_xul_swt -> commons_xul_core
+
+    pentaho_actionsequence_dom -> pentaho_connections
+
+    kettle_core -> pentaho_metastore
+
+    platform_api -> commons_xul_core
+    platform_api -> pentaho_actionsequence_dom
+    platform_api -> pentaho_commons_database_model
+
+    kettle_engine -> kettle_engine_ext_api
+    kettle_engine -> platform_api
+    kettle_engine -> kettle_core
+    kettle_engine -> pentaho_registry
+
+    kettle_dbdialog -> commons_xul_swt
+    kettle_dbdialog -> kettle_engine
+
+    kettle_ui_swt -> commons_xul_swt
+    kettle_ui_swt -> pentaho_vfs_browser
+    kettle_ui_swt -> kettle_dbdialog
+    kettle_ui_swt -> pentaho_capability_manager
+}
+@enduml

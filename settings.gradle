@@ -1,0 +1,27 @@
+rootProject.name = 'split-kettle'
+
+//无依赖项目
+include 'pentaho-capability-manager'
+include 'pentaho-commons-database-model'
+include 'pentaho-metastore'
+include 'pentaho-registry'
+include 'pentaho-vfs-browser'
+include 'kettle-engine-ext-api'
+
+include 'commons-xul-core'
+include 'commons-xul-swt'
+
+include 'pentaho-connections'
+include 'pentaho-actionsequence-dom'
+include 'kettle-core'
+include 'platform-api'
+include 'kettle-engine'
+include 'kettle-dbdialog'
+include 'kettle-ui-swt'
+
+
+
+//include 'pentaho-metadata'
+
+
+
