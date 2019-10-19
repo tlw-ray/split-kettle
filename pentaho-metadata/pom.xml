@@ -33,7 +33,7 @@
     <pdi.version>8.1.0.6-682</pdi.version>
     <pentaho-connections.version>8.1.0.6-682</pentaho-connections.version>
     <pentaho-reporting.version>8.1.0.6-682</pentaho-reporting.version>
-    <xstream.version>1.4.10</xstream.version>
+    <xstream.version>1.4.10-java7</xstream.version>
     <pentaho-cwm.version>1.5.4</pentaho-cwm.version>
     <netbeans.version>200507110943</netbeans.version>
     <netbeans-custom.version>200507110943-custom</netbeans-custom.version>
